@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lejem Pizza</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
-    <nav>
-        <img src="https://github.com/hecagus/Lejem/blob/main/WhatsApp%20Image%202025-11-24%20at%207.37.33%20PM.jpeg" class="logo">
+<header class="header">
+    <nav class="nav">
+        <img src="img/logo.jpeg" class="logo" alt="Lejem Pizza">
+
         <ul class="menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Sobre Nosotros</a></li>
+            <li><a href="#home">Inicio</a></li>
             <li><a href="#menu">Menú</a></li>
             <li><a href="#cart">Carrito</a></li>
             <li><a href="#order">Ordenar</a></li>
@@ -22,28 +22,31 @@
 </header>
 
 <section id="home" class="hero">
-    <h1>Bienvenido a Lejem Pizza</h1>
-    <p>Pizza artesanal con sabor tradicional.</p>
+    <h1>🍕 Bienvenido a Lejem Pizza</h1>
+    <p>Pizza artesanal con el auténtico sabor tradicional.</p>
 </section>
 
 <section id="menu" class="products">
     <h2>Menú</h2>
 
     <div class="product">
+        <img src="img/pepperoni.jpg" class="pimg">
         <h3>Pizza Pepperoni</h3>
-        <p>$150</p>
+        <p class="price">$150</p>
         <button onclick="addToCart('Pizza Pepperoni',150)">Agregar</button>
     </div>
 
     <div class="product">
+        <img src="img/hawaiana.jpg" class="pimg">
         <h3>Pizza Hawaiana</h3>
-        <p>$160</p>
+        <p class="price">$160</p>
         <button onclick="addToCart('Pizza Hawaiana',160)">Agregar</button>
     </div>
 
     <div class="product">
+        <img src="img/mexicana.jpg" class="pimg">
         <h3>Pizza Mexicana</h3>
-        <p>$170</p>
+        <p class="price">$170</p>
         <button onclick="addToCart('Pizza Mexicana',170)">Agregar</button>
     </div>
 
@@ -52,22 +55,23 @@
 <section id="cart" class="cart">
     <h2>Carrito</h2>
     <ul id="cartList"></ul>
-    <h3>Total: $<span id="total">0</span></h3>
+    <h3>Total: <span id="total">$0</span></h3>
+
+    <button class="clear" onclick="clearCart()">Vaciar Carrito</button>
 </section>
 
 <section id="order" class="order">
     <h2>Finalizar Pedido</h2>
 
     <label>Nombre completo:</label>
-    <input type="text" id="nombre" required>
+    <input type="text" id="nombre">
 
     <label>Dirección completa:</label>
-    <input type="text" id="direccion" required>
+    <input type="text" id="direccion">
 
-    <button class="buy" onclick="sendOrder()">Comprar por WhatsApp</button>
+    <button class="buy" onclick="sendOrder()">Enviar pedido por WhatsApp</button>
 </section>
 
 <script src="script.js"></script>
-
 </body>
 </html>
