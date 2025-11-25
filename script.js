@@ -17,7 +17,13 @@ function updateCart() {
         list.appendChild(li);
     });
 
-    document.getElementById("total").textContent = total;
+    document.getElementById("total").textContent = "$" + total;
+}
+
+function clearCart() {
+    cart = [];
+    total = 0;
+    updateCart();
 }
 
 function sendOrder() {
@@ -29,18 +35,18 @@ function sendOrder() {
         return;
     }
 
-    let message = `*Nuevo Pedido Lejem Pizza*\n`;
-    message += `\n*Cliente:* ${nombre}`;
-    message += `\n*Dirección:* ${direccion}`;
-    message += `\n\n*Pedido:*`;
+    let message = `🍕 *Nuevo Pedido - Lejem Pizza* 🍕\n\n`;
+    message += `👤 *Cliente:* ${nombre}\n`;
+    message += `📍 *Dirección:* ${direccion}\n\n`;
+    message += `🛒 *Pedido:*\n`;
 
     cart.forEach(item => {
-        message += `\n- ${item.name}: $${item.price}`;
+        message += `• ${item.name} — $${item.price}\n`;
     });
 
-    message += `\n\n*Total:* $${total}`;
+    message += `\n💵 *Total:* $${total}`;
 
     const url = `https://wa.me/528135037076?text=${encodeURIComponent(message)}`;
-
     window.open(url, "_blank");
 }
+
